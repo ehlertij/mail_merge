@@ -5,6 +5,7 @@ module MailMerge
   # and ::site.[method]:: and send the [method] to the associated object
   # Chaining works as well (ex. ::site.organization.name:: yields 'TST Media')
   def self.merge(content, options = {}, merge_fields = [], delimeter = "::")
+    merged = content
     options.keys.each do |key|
       obj = options[key]
       merged = content.gsub(/#{delimeter}#{key.to_s}\.[\w|\.]*#{delimeter}/) do |s|
@@ -23,4 +24,5 @@ module MailMerge
     end
     merged
   end
+  
 end
