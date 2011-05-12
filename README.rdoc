@@ -1,0 +1,13 @@
+= mail_merge
+
+Mail Merge Gem
+
+Parses a string and replaces specified merge fields with the evaluated result:
+
+[Usage]
+* MailMerge.merge(content, options = {}, merge_fields = [], delimeter = "::")
+
+[Examples]
+* merged_content = MailMerge.merge(content, {:site => @site, :user => @user}, ['::site.name::', '::user.full_name::']) # Basic example
+* merged_content = MailMerge.merge(content, {:site => @site, :user => @user}) # This will evaluate any merge fields that start with 'site' or 'user'
+* merged_content = MailMerge.merge(content, {:site => @site, :user => @user}, ['~~site.name~~', '~~user.full_name~~'], "~~") # Using your own delimeter
