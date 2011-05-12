@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ian Ehlert"]
   s.email       = ["ehlertij@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/ehlertij/mail_merge"
   s.summary     = %q{Mail Merge Gem}
   s.description = %q{A simple gem that will perform a mail merge on a string based on merge fields provided.}
 

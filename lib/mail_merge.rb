@@ -4,7 +4,7 @@ module MailMerge
   # will search text_block.content and find all instances of ::user.[method]::
   # and ::site.[method]:: and send the [method] to the associated object
   # Chaining works as well (ex. ::site.organization.name:: yields 'TST Media')
-  def merge(content, options = {}, merge_fields = [], delimeter = "::")
+  def self.merge(content, options = {}, merge_fields = [], delimeter = "::")
     options.keys.each do |key|
       obj = options[key]
       merged = content.gsub(/#{delimeter}#{key.to_s}\.[\w|\.]*#{delimeter}/) do |s|
