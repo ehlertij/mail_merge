@@ -8,7 +8,7 @@ module MailMerge
     merged = content
     options.keys.each do |key|
       obj = options[key]
-      merged = content.gsub(/#{delimeter}#{key.to_s}\.[\w|\.]*#{delimeter}/) do |s|
+      merged = merged.gsub(/#{delimeter}#{key.to_s}\.[\w|\.]*#{delimeter}/) do |s|
         if merge_fields.empty? or merge_fields.include?(s)
           begin
             res = s[/\..*\w/][/\w.*/].split('.').collect{|m| obj = obj.send(m)}.last
